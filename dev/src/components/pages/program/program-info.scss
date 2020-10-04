@@ -1,0 +1,125 @@
+$text-font: 'Hind', Arial, Sans-serif;
+$turquoise-dark: #078286;
+
+.container {
+    margin: 0 6%;
+    font-family: $text-font;
+}
+
+.event-content {
+    margin: 40px 0 70px 0;
+    display: flex;
+}
+
+/* headline */
+.event-headline {
+    position: relative;
+    text-align: center;
+    color: white;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 50vh;        
+    }
+
+    h1{
+        font-size: 2.5em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 2px black;
+        font-family: Montserrat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* event description */
+
+article {
+    text-align: justify;
+    margin-right: 5%;
+    min-width: 70%;
+
+    .category {
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .event-description {
+        margin-top: 15px;
+    }
+}
+
+/*event box*/
+
+.event-box {
+    text-align: left;
+
+
+    .buy-button {
+        text-align: center;
+        font-family: Montserrat;
+        background-color: $turquoise-dark;
+        text-transform: uppercase;
+        padding: 16px 0;
+
+        a {
+            color: white;
+            text-decoration: none; 
+        }
+    }
+
+    .buy-button:hover {
+        background-color: #155669;
+    }
+
+    ul {
+        list-style: none;
+        margin: 10px 0;
+        padding: 10px 20px 60px 20px;
+        background-color: #e2e2e2;
+        border: 0.5px solid #c0bfbf;
+
+
+        li {
+            margin: 10px 0;
+
+            .bold-font {
+                font-weight: bold;
+            }
+
+            a {
+                color: black;
+            }
+        }
+    }
+}
+
+.delete-event {
+    margin-bottom: 30px;
+
+    a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        background: #c70000;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .event-content {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .category {
+            margin-top: 15px;
+        }
+    }
+  }

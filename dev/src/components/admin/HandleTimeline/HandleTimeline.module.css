@@ -1,0 +1,13 @@
+.HandleTimeline {
+    min-height: 600px;
+    color: black;
+    background-color: greenyellow;
+}
+
+.flex {
+    display: inline-block;
+}
+
+.FormContainer {
+    background-color: dodgerblue;
+}

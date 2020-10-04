@@ -1,0 +1,12 @@
+.SignIn {
+    color: red;
+    min-height: 600px;
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.Input {
+    min-width: 50%;
+    display: inline-block;
+    margin: 10px;
+}

@@ -1,0 +1,145 @@
+$headline: 'Montserrat', Arial, Sans-serif;
+$text-font: 'Hind', Arial, Sans-serif;
+$turquoise-dark: #078286;
+
+/*events positioning and sizing*/
+.event {
+    box-shadow: 0 0 1.5px #24272c8e; /* subtle contrast in case of white pictures */
+}
+
+.eventsContainer {
+    margin: 1.4em 0 90px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
+
+    .event {
+        overflow: hidden; /* hide excessive ribbons and event info */
+        height: 270px;
+        position: relative;
+
+        .eventLink {
+            text-decoration: none;
+        }
+                
+        .eventImage {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }        
+    }
+}
+
+
+
+/*ribbons */
+
+.ribbonWrapper {
+    width: 170px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-transform: uppercase;
+
+    .ribbon {
+        background-color: rgb(228, 13, 24);
+        color: white;  
+        text-align: center;
+        text-shadow: black 0px 1.5px 2px;
+        position: relative;
+        padding: 0.3em;
+        left: 20px;
+        top: 20px;
+        width: 220px;
+        transform: rotate(45deg);  
+        box-shadow: 0 0 1.5px #752f2f; /* subtle contrast in case of red pictures */
+
+    }
+}
+
+/* events information */
+.event {
+  
+    .eventWrapper {
+        position: sticky;
+        bottom: 0;
+        width: 100%;    
+        display: flex;
+        
+
+        .date {
+            font-family: "Karla";
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            color: white;
+            background: $turquoise-dark;
+            padding: 15px;
+            line-height: 130%;
+
+            .day {
+                font-size: 1.8em;
+            }
+
+            .month {
+                text-transform: uppercase;
+                font-size: 1em;
+
+            }
+        }
+
+        .eventText {
+            line-height: 150%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.70);
+            color: black;
+            width: 100%;
+            min-width: 0;
+
+            /*truncate the text if text is too long */
+            .eventHeadline {
+                font-family: 'Ubuntu', Arial, Sans-serif;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+
+            .eventInfo {
+                font-size: 0.9em;
+
+                .price {
+                    padding: 20px;
+                } 
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1700px) {
+
+    .eventsContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+    .eventsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+
+    .eventsContainer {
+        grid-template-columns: auto;
+    }
+
+}

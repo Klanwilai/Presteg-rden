@@ -1,0 +1,217 @@
+$headline: 'Montserrat', Arial, Sans-serif;
+$text-font: 'Hind', Arial, Sans-serif;
+$turquoise-dark: #078286;
+
+.box {
+    width: 25px;
+}
+
+.list {
+    width: 20px;
+}
+
+.coming {
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* status (upcoming/past) sorting for events */
+.status-sorting {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    li {
+        margin: 0 30px 10px 0;
+        border-bottom: 3px solid transparent;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .active{
+            color: $turquoise-dark;
+        }
+
+    }
+
+    li a:hover {
+        border-bottom: 1.5px solid currentColor; /*gets the current color of the link*/
+    }
+}
+
+/*sorting nav*/
+.sorting-options {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.93em;
+    color: white;
+    background-color: #3A3A3A;
+
+    li {
+        display: block;
+        padding: 0 1.2em;
+        cursor: pointer;
+    }
+
+    .view-sorting,.category-sorting {
+        display: flex;
+        padding: 1em 0;
+    
+    }
+    
+    .view-sorting {
+        padding-right: 30px;
+        border-right-style : solid;
+        border-width: 0.1px;
+        border-color: white;
+
+    }
+
+}
+
+
+
+/*events positioning and sizing*/
+
+.events-container {
+    padding: 1.4em 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
+    margin-bottom: 60px;
+
+    .event {
+        overflow: hidden; /* hide excessive ribbons and event info */
+        height: 270px;
+        position: relative;
+
+        a{
+            text-decoration: none;
+        }
+                
+        .event-image {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }        
+    }
+}
+
+
+
+/*ribbons */
+
+.ribbon-wrapper {
+    width: 170px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-transform: uppercase;
+
+    .ribbon {
+        background-color: rgb(228, 13, 24);
+        color: white;  
+        text-align: center;
+        text-shadow: black 0px 1.5px 2px;
+        position: relative;
+        padding: 0.3em;
+        left: 20px;
+        top: 20px;
+        width: 220px;
+        transform: rotate(45deg);  
+        box-shadow: 0 0 1.5px #752f2f; /* subtle contrast in case of red pictures */
+
+    }
+}
+
+/* events information */
+.event {
+    text-decoration: none;
+    box-shadow: 0 0 1.5px #24272c8e; /* subtle contrast in case of white pictures */
+  
+    .event-wrapper {
+        position: sticky;
+        bottom: 0;
+        width: 100%;    
+        display: flex;
+        
+
+        .date {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            color: white;
+            background: $turquoise-dark;
+            padding: 15px;
+            line-height: 130%;
+            font-family: "Karla";
+
+            .day {
+                font-size: 1em;
+            }
+
+ 
+        }
+
+        .event-text {
+            line-height: 150%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.70);
+            color: black;
+            width: 100%;
+            min-width: 0;
+
+            /*truncate the text if text is too long */
+            h2 {
+                font-family: 'Ubuntu', Arial, Sans-serif;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+
+            .event-info {
+                font-size: 0.9em;
+
+                .pris {
+                    padding: 20px;
+                } 
+            }
+        }
+    }
+}
+
+
+
+/* change grid view for different screens sizes */
+
+@media only screen and (min-width: 1700px) {
+
+    .events-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+    .events-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .container{
+        margin: 0;
+    }
+
+    .events-container {
+        grid-template-columns: auto;
+    }
+
+}

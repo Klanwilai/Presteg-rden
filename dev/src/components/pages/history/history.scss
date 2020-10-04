@@ -1,0 +1,143 @@
+$headline: 'Montserrat', Arial, Sans-serif;
+$text-font: 'Hind', Arial, Sans-serif;
+$turquoise-dark: #077386;
+
+/* content of history */
+
+.history-container {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    margin-bottom: 80px;
+
+}
+
+/* side navigation */
+
+.history-navigation {
+    background: white;
+    padding-top: 25%;
+
+    h2 {
+        padding-top: 15%;
+        font-weight: 500;
+    }
+
+    ul {
+        list-style-type: none;
+
+        a{
+            color: $turquoise-dark;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* headline for every year */
+
+.year-headline {
+    margin: 4% 0;
+    font-family: $headline;
+    font-weight: 500;
+    font-size: 1.2em;
+    display: table;
+
+    &:after {
+        content: '';
+        display: table-cell;
+        width: 100%;
+        background: linear-gradient(transparent 50%, #888888 50%, transparent calc(50% + 1px));
+    }
+}   
+
+.history-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+
+    .history-image {
+        width: 100%;
+        object-fit: cover;
+        align-items: stretch;
+
+    }
+
+    .history-text {
+        padding: 8%;
+        background: #e0f4f8;
+
+        h3 {
+            font-size: 1.5em;
+            font-family: $headline;
+            font-weight: 500;
+            border-bottom: 1px solid #979797;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: justify;
+
+        }
+
+    }
+
+}
+
+.history-entry:nth-child(odd) {
+    direction: rtl;
+
+    p {
+        direction: ltr;
+    }
+}
+
+
+
+
+/* media queries for smaller screens */
+
+@media only screen and (max-width: 1000px) {
+    .container{
+        margin: 0;
+    }
+
+    .history-container {
+        grid-template-columns: auto;
+    }
+
+    .history-navigation { 
+        padding-top: 10px;
+
+        h2, ul {
+            padding: 3px 0;
+            background: white;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+        }
+    }
+
+    .history-entry {
+        grid-template-columns: 1fr;
+        margin-bottom: 20px;
+
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .history-navigation {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+
+        }
+    }
+}

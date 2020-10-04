@@ -1,0 +1,200 @@
+$turquoise-dark:#078286;
+
+/* form styling */
+
+.admin-wrapper {
+    background: #eff6f7;
+}
+
+.admin {
+    padding-bottom: 80px;
+}
+
+.form-wrapper {
+	width: 500px;
+	max-width: 100%;
+	margin: 0 auto 50px auto;
+    position: relative;
+    
+    .grid-time {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: 1fr 1fr;
+        
+        .date-time {
+            margin-bottom: 20px;
+        }
+    }
+
+	.title_container {
+		text-align: center;
+		padding-bottom: 15px;
+    }
+    
+	.input-field {
+        margin-bottom: 20px;
+
+        .year-selection {
+            margin-right: 7px;
+
+            .year-input {
+                margin-right: 2px;
+            }
+        }
+	}
+
+    input:focus, textarea:focus {
+        border-left:10px solid #505050 !important;
+        -webkit-transition:0.4s ease;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+	input, textarea {
+        resize: none;
+        color: black;
+        border-radius: 10px;
+
+    &[type="text"], 
+    &[type="email"], 
+    &[type="password"], 
+    &[type="date"],
+    &[type="time"],
+    &[type="url"],
+    &[type="number"],
+    &[type="file"] {
+        background: white;
+        width: 100%;
+        padding: 0.5em 0.9em;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        outline: none;
+
+    }
+}
+    button {
+        border-radius: 10px;
+        background: $turquoise-dark;
+        padding: 10px;
+		width: 100%;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		color: #fff;
+		font-size: 1.1em;
+		margin-bottom: 10px;
+        display: inline-block;
+        
+		&:hover, &:focus {
+			background: darken($turquoise-dark,7%);
+		}   
+  }
+}
+
+/* styling for showcase of existing events */
+.existing-event-text {
+    font-family: 'Montserrat', Arial, Sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create-event-grid {
+    padding: 0 6% 60px 6%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+
+    .existing-events {
+        background: white;
+        color: black;
+        text-decoration: none;
+        border: 1px solid #838383;            
+        min-width: 0;
+
+
+        .truncate {
+
+            p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            }
+        }
+
+    .existing-content-event {
+        padding: 20px;
+    }
+    
+    }
+
+}
+
+
+/*contact */ 
+.contact-nb {
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+.current-contact {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+/* add new year styling */
+
+.new-year {
+    text-align: center;
+    padding-bottom: 60px;
+
+    input {
+        padding: 0.2em 0.9em;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+
+    button {
+        margin: 0 10px;
+        color: white;
+        background: $turquoise-dark;
+        padding: 0.2em 0.9em;
+        border-radius: 10px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+	.form-wrapper {
+
+		.grid-time {
+            grid-template-columns: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .create-event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+
+    .admin-wrapper {
+        padding: 0 20px 60px 20px;
+    }
+
+    .create-event-grid {
+        grid-template-columns: auto;
+        padding: 0;
+    }
+
+}

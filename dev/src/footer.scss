@@ -1,0 +1,98 @@
+$primary-color: #FFFF;
+$font-stack: hind;
+$turquoise-dark: #078286;
+
+
+.footer{
+    background-color: #2c2c2c;
+    color: $primary-color;
+    font-family: $font-stack;
+    font-size: 0.7em;
+    letter-spacing: 0.25em;
+    border-top: 10px solid $turquoise-dark;
+
+    a:link{
+        color: $primary-color;
+        text-decoration: none;
+    }
+
+    .venner-headline{
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+    .venner{
+        text-transform: uppercase;
+    }
+    
+}
+
+.footer-container{
+    display: flex;
+
+    div{
+        margin: 70px 0 80px 60px;
+
+        h4 {
+            font-weight: normal;
+        }
+
+        p{
+            margin-top: 10px;
+        }
+    }
+
+    .footer-contact{
+        margin-top:30px;
+        letter-spacing: 0px;
+
+        p{
+            margin-top: 0px;
+        }
+    }
+
+    #insta{
+        width: 2.5em;
+    }
+
+    #face{
+        width: 2.45em;
+    }
+
+    #insta, #face {
+        margin-right: 8px;
+    }
+
+
+    #logo{
+        padding: 25px 0 0 0;
+        width: 14em;
+        margin-left: -5px;
+    }
+
+    .credits {
+
+        h4 {
+            text-transform: uppercase;
+        }
+
+        p {
+            letter-spacing: 0;
+            line-height: 1.2em;
+        }
+    }
+
+}
+
+/* media queries for screens under 600px */
+
+@media only screen and (max-width: 700px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+
+
+        div {
+            margin: 20px 0;
+        }
+    }
+  }

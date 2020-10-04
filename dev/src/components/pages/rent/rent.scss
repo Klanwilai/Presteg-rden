@@ -1,0 +1,136 @@
+$font: 'Montserrat', Arial, Sans-serif;
+$turquoise-dark: #077386;
+
+/* headline with photo */
+.rent-headline {
+    position: relative;
+    text-align: center;
+    color: white;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 50vh;     
+        -webkit-filter: blur(0 1vh); /* Safari 6.0 - 9.0 */
+        filter: blur(0 1px);   
+    }
+
+    h1{
+        font-size: 2.5em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 2px black;
+        font-family: Montserrat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.rent-container {
+    margin: 30px 6% 80px 6%;
+    display: flex;
+}
+
+/* rent information */
+.rent{
+    font-family: 'Hind', Arial, Sans-serif;
+    
+    .rent-info{
+        margin-right: 100px;
+
+        h2, h3{
+            font-family: $font;
+            font-size: 1.2em;
+            letter-spacing: 2.5px;
+            margin-bottom: 0.5em;
+        }
+
+        h3{
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 0.5em;
+        }
+    }
+}
+
+/* form for renting */
+.rent-form {
+ 
+    h3 {
+        font-family: $font;
+        font-size: 1.2em;
+        letter-spacing: 2.5px;
+    }
+
+    h4 {
+        margin-top: 0.5em;
+        font-weight: normal;
+    }
+
+  
+    .flex-rent{
+        display: flex;
+
+        label#email{
+            margin-left: 10px;
+        }
+        label#til{
+            margin-left: 10px;
+        }
+
+    }
+    input{
+        width: 100%;
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+        padding: 0.5em;
+        margin: 8px 0;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    input#arr{
+        width: 100%;
+        height: 80px;
+    }
+
+    .send {
+        background:#cfcfcf;
+        padding: 0.5em 0;
+    }
+
+    .send:hover {
+        background: $turquoise-dark;
+        color: white;
+    } 
+}
+
+#oblig {
+    font-size: 0.8em;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .rent-container {
+        flex-direction: column;
+
+        .rent-info {
+            margin: 0;
+        }
+
+    }
+
+    .rent-form {
+
+        input {
+            width: 120px;
+        }
+        
+        input#arr {
+            width: 250px;
+        }
+
+    }
+  }

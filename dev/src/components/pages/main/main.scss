@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
+.index {
+    font-family: Hind;
+}
+
+/* clickable events */
+.eventclick-wrapper {
+    margin: 1.5% 3%;
+    line-height: 1.3em;
+
+    h2 {
+        margin: 0.5em 0;
+        text-transform: uppercase;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 300;
+    }
+
+    .event-click {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        grid-gap: 0.3em;
+        list-style-type: none;
+        cursor: pointer;
+        min-width: 0;
+        font-size: 0.9em;
+
+
+        li {
+            display: grid;
+            align-items: center;
+            padding: 0.5em 1em;
+            background: #eeeeee;
+            border: 0.5px solid #c2c2c2;
+
+            h3 {
+                font-family: Catamaran;
+                text-transform: uppercase;
+            }
+
+            // truncate text
+            h3, p, a {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+            }
+        }
+
+        .read-more {
+            background: #077d9b;
+            text-transform: uppercase;
+            
+            a {
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        
+        li:hover {
+            color: #516777;
+        }
+
+        .read-more:hover {
+            background: #0a6386;
+        }
+
+
+        // active event box
+        .active {
+            background: #d5d5d5;
+            border: 0.5px solid #aaaaaa;
+        }
+    }
+}
+
+/* slideshow */
+.slider-wrapper {
+    -webkit-animation: slide 1s ease infinite;
+    height: 28em;
+    position: relative;
+    overflow: hidden; /* to keep the images within view height */
+
+    .slider-content {
+        background-size: cover !important;
+        text-align: center;
+    
+    }
+}
+
+/* slides title and description */
+.slider-content {
+    
+
+    .slide-text {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-family: Ubuntu;
+
+        h2 {
+            font-family: Montserrat;
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.5;
+
+        }
+
+        h2, p, button {
+            color: white;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        p {
+            margin: 1% 25%;
+        }
+    }
+}
+
+/* buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 30%;
+
+    a {
+        color: white;
+        text-decoration: none;
+        border: 2px solid white;
+        margin: 10px;
+        padding: 1em;
+    
+
+        button {
+            background: none;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            
+        }
+    }
+
+    a:hover {
+        color: #FFFFFF;
+        background:rgba(0, 0, 0, 0.4);
+    }
+}
+
+.slider-content {
+    .slide-text {
+        a {
+            -webkit-transition-delay: 0s; /* removes transition delay */
+            transition-delay: 0s;
+        }
+    }
+}
+
+
+
+/* add a dark tint to the image so white text can be read */
+.slide::before {
+    content: '';
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: -webkit-gradient-linear(180deg, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6)));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+/* previous and next buttons */
+.previousButton, .nextButton {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+    z-index: 1;
+    padding: 100% 4%;
+
+    svg {
+        filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+        
+        -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+        polygon {
+            fill: white;
+        }
+    }
+
+}
+
+.nextButton:hover {
+    padding-left: 20%;
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.3)); /* Standard syntax (must be last) */
+}
+
+.previousButton:hover {
+    padding-right: 20%;
+    background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.3)); /* Standard syntax (must be last) */
+}
+
+.nextButton {
+  right: 0;
+}
+
+
+/* praestgarn showcases */
+
+.index-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5%;
+    align-items: center;
+    padding: 7% 10%;
+    justify-items: center;
+
+
+    .index-text {
+
+        h2 {
+            font-family: Montserrat;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        p, a {
+            color: black;
+            line-height: 1.5em;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        h2, p {
+            padding-bottom: 0.5em;
+        }
+
+        a {
+            .read-more {
+                text-decoration: underline;
+            }
+
+            .read-arrow {
+                color: #0d8297;
+                padding-left: 0.5em;
+            }
+        }
+
+
+    }
+
+    .index-pic {
+        width: 20em;        
+    }
+}
+
+/*showcase with image background*/
+.image-showcase {
+    height: 30em;
+    background-position: bottom; 
+    background-size: cover;
+    display: grid; 
+    justify-items: end;
+
+    .image-showcase-text {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        padding: 2em;
+        margin: 7.5em;
+        background: white;
+        width: 13em;
+        height: 10em;
+        border: 0.5px solid black;
+        line-height: 1.3em;
+
+        h2{
+            font-family: Montserrat;
+            text-transform: uppercase;
+            font-size: 1.4em;
+            margin: 0.5em;
+        }
+        
+        a, p {
+            font-size: 0.9em;
+            color: black;
+            text-decoration: none;
+        }
+        
+        a {
+            display: inline-block;
+            padding-top: 1em;
+
+            .read-more {
+                color: black;
+                text-decoration: underline;
+            }
+
+            .read-arrow {
+                color: #0d8297;
+                padding-left: 0.5em;
+            }
+        }
+    }
+}
+
+
+
+// media queries
+
+@media only screen and (max-width: 650px) {
+    .buttons {
+        margin: 5% 20%;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .slider-content {
+
+        .slide-text {
+
+            h2 {
+                font-size: 2.5em;
+                margin-top: -10%;
+            }
+
+            p {
+                display: none;
+            }
+        }
+    } 
+
+    .index-showcase {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 7% 10%;
+        grid-template-columns: auto;
+
+        .index-pic {
+            width: 12em;
+            margin: 1em 0;
+        }
+
+    }
+
+    .image-showcase {
+        justify-items: center;
+
+        .image-showcase-text {
+            clear:both;
+            align-items: center;
+            margin: 7.5em 0 0 0;
+        }
+    }
+
+}
